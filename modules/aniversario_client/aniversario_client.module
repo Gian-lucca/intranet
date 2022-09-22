@@ -1,0 +1,15 @@
+<?php
+/**
+ * Define o tema ( template ) do módulo.
+ * Implements hook_theme().
+ */
+
+function aniversario_client_theme ($existing, $type, $theme, $path) {
+  return [
+    'aniversario_client' => [
+      'variables' => [
+        'm_path' => NULL
+      ],
+    ],
+  ];
+}

@@ -1,0 +1,52 @@
+entity.vocabulary.add_organigram_form:
+  path: 'admin/structure/taxonomy/add/organigram'
+  defaults:
+    _controller: '\Drupal\organigrams\Controller\OrganigramsController::addForm'
+    _title: 'Add organigram'
+  requirements:
+    _entity_create_access: 'taxonomy_term'
+    _permission: 'create organigrams'
+
+organigrams.import_form:
+  path: '/admin/structure/taxonomy/import/d7-organigram'
+  defaults:
+    _form: '\Drupal\organigrams\Form\OrganigramsImportD7Form'
+    _title: 'Import Drupal 7 Organigram'
+  requirements:
+    _entity_create_access: 'taxonomy_term'
+    _permission: 'import organigrams'
+
+organigrams.import_items_form:
+  path: '/admin/structure/taxonomy/manage/{taxonomy_vocabulary}/import'
+  defaults:
+    _form: '\Drupal\organigrams\Form\OrganigramsImportItemsForm'
+    _title: 'Import organigram items'
+  requirements:
+    _entity_create_access: 'taxonomy_term:{taxonomy_vocabulary}'
+    _custom_access: '\Drupal\organigrams\Controller\OrganigramsController::isOrganigram'
+  options:
+    parameters:
+      taxonomy_vocabulary:
+        type: entity:taxonomy_vocabulary
+
+organigrams.export_items_form:
+  path: '/admin/structure/taxonomy/manage/{taxonomy_vocabulary}/export'
+  defaults:
+    _controller: '\Drupal\organigrams\Controller\OrganigramsController::exportOrganigramItems'
+    _title: 'Export organigram items'
+  requirements:
+    _entity_create_access: 'taxonomy_term:{taxonomy_vocabulary}'
+    _custom_access: '\Drupal\organigrams\Controller\OrganigramsController::isOrganigram'
+  options:
+    parameters:
+      taxonomy_vocabulary:
+        type: entity:taxonomy_vocabulary
+
+organigrams.view:
+  path: '/organigram/{taxonomy_vocabulary}'
+  defaults:
+    _controller: '\Drupal\organigrams\Controller\OrganigramsController::viewOrganigram'
+    _title_callback: '\Drupal\taxonomy\Controller\TaxonomyController::vocabularyTitle'
+  requirements:
+    _permission: 'view organigrams'
+    _custom_access: '\Drupal\organigrams\Controller\OrganigramsController::isOrganigram'

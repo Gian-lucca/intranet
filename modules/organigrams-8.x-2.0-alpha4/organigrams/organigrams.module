@@ -1,0 +1,246 @@
+<?php
+
+/**
+ * @file
+ * Extends Taxonomy to create organigrams.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\organigrams\Controller\OrganigramsController;
+use Drupal\Core\Render\BubbleableMetadata;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+use Drupal\Core\Config\FileStorage;
+
+/**
+ * Implements hook_help().
+ */
+function organigrams_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.organigrams':
+      $help = t('Organigrams represent visualizations of hierarchies in organizations. An organigram contains multiple items which can be related in various ways to each other.');
+      $help .= '<p>';
+      $help .= t('Organigrams have multiple display options:');
+      $help .= '<ol>';
+      $help .= '<li>' . t('<strong>Dedicated page</strong><br />A dedicated page is available at <i>/organigram/%machine_name</i>.') . '</li>';
+      $help .= '<li>' . t('<strong>Block</strong><br />The organigram blocks can be found on the <a href=":blocks">blocks administration page</a>.', [
+        ':blocks' => Url::fromRoute('block.admin_display')->toString(),
+      ]) . '</li>';
+      $help .= '<li>' . t('<strong>Token</strong> (requires <a href="@token_filter">Token filter</a>)<br />Tokens can be used to insert organigrams in content fields. The token names are displayed beneath the names in this list and look like this: <i>[organigrams:%machine_name]</i>. Just copy and paste this token in your content to insert the organigram.', [
+        '@token_filter' => 'https://www.drupal.org/project/token_filter',
+      ]) . '</li>';
+      $help .= '</ol></p>';
+      return '<p>' . $help . '</p>';
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function organigrams_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Alter the vocabulary form.
+  if ($form_id == 'taxonomy_vocabulary_form') {
+    // Get the vocabulary.
+    $vocabulary = $form_state->getFormObject()->getEntity();
+    // Get its organigrams settings if they exist.
+    $organigram = $vocabulary->getThirdPartySettings('organigrams');
+
+    // Check if the current page is a vocabulary add form and if there are
+    // organigrams settings.
+    if (\Drupal::routeMatch()->getRouteName() == 'entity.vocabulary.add_organigram_form' || !empty($organigram)) {
+      // Add our own submit function to the submit button.
+      foreach (array_keys($form['actions']) as $action) {
+        if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+          $form['actions'][$action]['#submit'][] = 'organigrams_vocabulary_form_submit';
+        }
+      }
+
+      // Change the form title when adding and editing.
+      if (!empty($organigram)) {
+        $form['#title'] = t('Edit organigram vocabulary');
+      }
+      else {
+        $form['#title'] = t('Add organigram vocabulary');
+      }
+    }
+  }
+  // Alter the taxonomy term overview form.
+  elseif ($form_id == 'taxonomy_overview_terms') {
+    // Get the vocabulary and check if it's and organigram.
+    $build_info = $form_state->getBuildInfo('args');
+    $organigram = $build_info['args'][0]->getThirdPartySettings('organigrams');
+
+    // Check if there are terms.
+    if (!empty($organigram) && !empty($form['terms'])) {
+      // Iterate through them.
+      foreach ($form['terms'] as $key => $value) {
+        // Pick out the terms by checking on tid in the key.
+        if (substr($key, 0, 3) == 'tid') {
+          // Get the position value.
+          $position = $value['#term']->get('field_o_position')->first()->getValue();
+          // If the positions is s, prepend 'Staff' to the term title.
+          if ($position['value'] == 's') {
+            $form['terms'][$key]['term']['#title'] = 'Staff: ' . $form['terms'][$key]['term']['#title'];
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Custom submit function for the vocabulary add form.
+ *
+ * @param array $form
+ *   Contains the vocabulary add form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   Contains the form state of the vocabulary add form.
+ */
+function organigrams_vocabulary_form_submit(array $form, FormStateInterface $form_state) {
+  // Get the vocabulary id.
+  $vid = $form_state->getValue('vid');
+
+  // Create taxonomy fields.
+  organigrams_create_term_fields($vid);
+
+  // Get the vocabulary entity.
+  $vocabulary = $form_state->getFormObject()->getEntity();
+
+  // Check if it exists.
+  if (!empty($vocabulary)) {
+    // Add a setting to indicate this is an organigram.
+    $vocabulary->setThirdPartySetting('organigrams', 'is_organigram', TRUE);
+
+    // Save the entity.
+    $vocabulary->save();
+  }
+}
+
+/**
+ * Create taxonomy fields.
+ *
+ * @param int $vid
+ *   Contains a vocabulary id.
+ */
+function organigrams_create_term_fields($vid) {
+  // Set the config path to the field configs.
+  $config_path = drupal_get_path('module', 'organigrams') . '/config';
+
+  // Get the sources for the config files.
+  $field_storage_source = new FileStorage($config_path . '/optional');
+  $field_config_source = new FileStorage($config_path . '/taxonomy_fields');
+
+  // Get all fields.
+  $field_config_list = $field_config_source->listAll();
+
+  // Check if we have fields and iterate through them.
+  if (!empty($field_config_list)) {
+    foreach ($field_config_list as $field_name) {
+      // Try to load the field config.
+      $field = FieldConfig::loadByName('taxonomy_term', $vid, $field_name);
+
+      // Stop if it already exists.
+      if (!empty($field)) {
+        continue;
+      }
+
+      // Get the field storage.
+      $field_storage = FieldStorageConfig::loadByName('taxonomy_term', $field_name);
+      // Create it if not found.
+      if (empty($field_storage)) {
+        $field_storage_config = $field_storage_source->read('field.storage.taxonomy_term.' . $field_name);
+        if (empty($field_storage_config)) {
+          continue;
+        }
+
+        $field_storage = FieldStorageConfig::create($field_storage_config);
+        $field_storage->save();
+      }
+
+      // Get the field config.
+      $field_config = $field_config_source->read($field_name);
+      // Add the field storage and vocabulary id to the field config.
+      $field_config['field_storage'] = $field_storage;
+      $field_config['bundle'] = $vid;
+
+      // Create and save the field.
+      $field = FieldConfig::create($field_config);
+      $field->save();
+
+      // Get the display repository.
+      $display_repository = \Drupal::service('entity_display.repository');
+
+      // Assign widget settings for the default form mode to display our fields.
+      $display_repository->getFormDisplay('taxonomy_term', $vid)
+        ->setComponent($field_name, [
+          'type' => $field_config['widget_type'],
+          'weight' => $field_config['weight'],
+        ])
+        ->save();
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ *
+ * Add our own class to the vocabulary overview to highlight organigrams.
+ */
+function organigrams_entity_type_alter(array &$entity_types) {
+  if (isset($entity_types['taxonomy_vocabulary']) && is_object($entity_types['taxonomy_vocabulary'])) {
+    $entity_types['taxonomy_vocabulary']->setListBuilderClass('Drupal\organigrams\OrganigramsListBuilder');
+  }
+}
+
+/**
+ * Implements hook_token_info().
+ *
+ * Add organigrams as tokens.
+ */
+function organigrams_token_info() {
+  $info = [];
+
+  // Create new token type.
+  $info['types']['organigrams'] = [
+    'name' => t('Organigrams'),
+    'description' => t('Token related to organigrams.'),
+  ];
+
+  // Get all vocabularies and iterate through them.
+  $vocabularies = \Drupal::entityTypeManager()->getStorage('taxonomy_vocabulary')->loadMultiple();
+  foreach ($vocabularies as $id => $vocabulary) {
+    // Create a token for each vocabulary.
+    $info['tokens']['organigrams'][$id] = [
+      'name' => $vocabulary->label(),
+      'description' => t('Display the organigram :organigram', [':organigram' => $vocabulary->label()]),
+    ];
+  }
+
+  return $info;
+}
+
+/**
+ * Implements hook_tokens().
+ *
+ * Add content to the organigrams tokens.
+ */
+function organigrams_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata) {
+  $replacements = [];
+
+  // Check if the type is organigrams.
+  if ($type == 'organigrams') {
+    // Iterate through the tokens.
+    foreach ($tokens as $name => $original) {
+      // Load the vocabulary.
+      $vocabulary = \Drupal::entityTypeManager()->getStorage('taxonomy_vocabulary')->load($name);
+      // Create the organigram.
+      $organigramsController = new OrganigramsController();
+      $organigram = $organigramsController->viewOrganigram($vocabulary);
+      // Put the organigram as value in this token.
+      $replacements[$original] = render($organigram);
+    }
+  }
+  return $replacements;
+}

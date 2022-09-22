@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="./orgchart-layout.css" rel="stylesheet">
+<link href="./orgchart-theme.css" rel="stylesheet">
+</head>
+<body>
+
+<ul class="orgchart">
+  <!-- Always start with a root. -->
+  <li class="root">
+    <!--
+    This div contains the actual styled content of the item.
+    It can also be a link: <a href="#" class="nodecontent">Text</a>.
+    -->
+    <div class="nodecontent">President</div>
+
+    <!--
+    Nodeassists can have max 2 children. These are mostly used for staff or
+    support functions.
+    -->
+    <ul class="nodeassists">
+      <!--
+      Add the "leaf" class if the item has no children. Otherwise a line will
+      be attached below the item.
+      -->
+      <li class="leaf">
+        <div class="nodecontent">Secretary 1</div>
+      </li>
+      <li>
+        <div class="nodecontent">Secretary 2</div>
+
+        <!-- A nodeassist can have children. -->
+        <ul>
+          <li class="leaf">
+            <div class="nodecontent">Art / Copy</div>
+          </li>
+          <li>
+            <div class="nodecontent">Production</div>
+            <ul>
+              <li class="leaf">
+                <div class="nodecontent">Art / Copy</div>
+              </li>
+              <li class="leaf">
+                <div class="nodecontent">Production</div>
+              </li>
+              <li class="leaf">
+                <div class="nodecontent">Production</div>
+              </li>
+            </ul>
+          </li>
+          <li class="leaf">
+            <div class="nodecontent">Production</div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- A new nodeassists ul is started if you want to add more assists. -->
+    <ul class="nodeassists">
+      <li class="leaf">
+        <div class="nodecontent">Secretary 3</div>
+      </li>
+      <!-- Add a dummy item if there is only 1 nodeassist. -->
+      <li class="dummy"></li>
+    </ul>
+
+    <ul>
+      <li>
+        <div class="nodecontent">Vice President<br />Account Services</div>
+        <ul class="nodeassists">
+          <li class="leaf">
+            <div class="nodecontent">Secretary 1</div>
+          </li>
+          <li class="dummy"></li>
+        </ul>
+        <ul>
+          <li>
+            <div class="nodecontent">Account Supervisor</div>
+            <ul>
+              <li class="leaf">
+                <div class="nodecontent">Account Executive</div>
+              </li>
+              <li class="leaf">
+                <div class="nodecontent">Account Executive</div>
+              </li>
+            </ul>
+          </li>
+          <li class="leaf">
+            <div class="nodecontent">Account Supervisor</div>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <div class="nodecontent">Vice President<br />Creative Services</div>
+        <ul>
+          <li class="leaf">
+            <div class="nodecontent">Art / Copy</div>
+          </li>
+          <li class="leaf">
+            <div class="nodecontent">Production</div>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <div class="nodecontent">Vice President<br />Marketing Services</div>
+        <ul>
+          <li class="leaf">
+            <div class="nodecontent">Media</div>
+          </li>
+          <li class="leaf">
+            <div class="nodecontent">Research</div>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <div class="nodecontent">Vice President<br />Management Services</div>
+
+        <!--
+        Add the "vertical" class if you want the children to be displayed
+        below each other.
+        -->
+        <ul class="vertical">
+          <li class="leaf">
+            <div class="nodecontent">Accounting</div>
+          </li>
+          <li class="leaf">
+            <div class="nodecontent">Purchasing</div>
+          </li>
+          <li class="leaf">
+            <div class="nodecontent">Personnel</div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</body>
+</html>

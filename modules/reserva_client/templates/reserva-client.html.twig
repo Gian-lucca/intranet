@@ -1,0 +1,133 @@
+{#
+ # Template do módulo.
+ #
+ # author Jose Maciel <jose.maciel@extreme.digital>
+ # version 1.0
+ # copyright Proderj 2022.
+ #}
+
+<section style = "display: flex;" id = "indexDireita9" class = "indexDireita container-servicos">
+    <section class = "indexDireitaInicial" style="margin-top: 20px;">
+        <div class = "reservaDireita loading-container">
+            <div class = "reservaDireitaCima loading" >
+                <h2>Aguarde</h2>
+                <img src="{{ m_path ~ '/img/glass_spheres-loading.gif' }}">
+            </div>
+        </div>
+        {# alerta #}
+        <div id="alertServerError"class="alert alert-danger" role="alert">
+            <p>Ocorreu um erro de comunicação com o servidor.</p>
+            <p>Pressione F5 para atualizar a página.</p>
+            <p>Caso o erro persista contate o administrador.</p>
+        </div>
+        <div class = "reservaDireita reserva-direita-content">
+            <div class = "reservaDireitaCima">
+                <div>
+                    <h2>Consulta de Reservas de Sala de Reunião</h2>
+                    <br>
+                    <div class = "reservaDireitaCimaCalendario">
+                        <img src="{{ m_path ~ '/img/icon_calendario.png' }}">
+                        <p>
+                            {{ item.content|date("d/m/Y H:i:s") }}
+                        </p>
+                    </div>
+                </div>
+                <div id = "reservaBotao" class = "botaoCompleto"> 
+                    <div class="botao-reserva">
+                        Solicitar Reserva de Sala de Reunião
+                    </div>
+                </div>
+            </div>
+            <div class = "reservaDireitaTabela">
+                {# Tabela gerada dinamicamente pelo módulo #}
+            </div>
+        </div>
+    </section>
+</section>
+<section style = "display: none;" id = "indexDireita10" class = "reservaCompleto">
+    <div id = "reservaCompleto-botao2" class = "reservaCompleto-botao">
+        <img id = "iconeFechar" src = "{{ m_path ~ '/img/X.png' }}">
+    </div>
+    <div class = "reserva">
+        <div class = "reserva-div1">
+            <h1>Solicitação de Reserva de Sala de Reunião</h1>
+        </div>
+        <div class = "reserva-div2">
+            <div id="alertOpError" class="alert" style="display:none">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                <span id="alertMsg">Atenção! Preencha corretamente os campos asinalados com * (Obrigatórios).</span>
+            </div>
+            <div id="form">
+                <div class = "reservaFormFlex">
+                    <div class = "reservaFormFlexCampos">
+                        <label id = "labels">Data da Reserva:</label>
+                        <input class = "reservaInput" value="yyyy-MM-dd" type="date"  name="data" required>
+                    </div>
+                    <div class = "reservaFormFlexCampos">
+                        <label class = "sala" for="sala">Sala:</label>
+                        <select class = "reservaInput" name="sala">
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="25 andar">25º andar</option>
+                        </select>
+                    </div>
+                </div>
+                <div class = "reservaFormFlex">
+                    <div class = "reservaFormFlexCampos">
+                        <label class = "horaI" for="horaI">Hora Inicial da Reserva:</label>
+                        <select class = "reservaInput" name="horaI">
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="09:00:00">09:00:00</option>
+                            <option value="10:00:00">10:00:00</option>
+                            <option value="11:00:00">11:00:00</option>
+                            <option value="12:00:00">12:00:00</option>
+                            <option value="13:00:00">13:00:00</option>
+                            <option value="14:00:00">14:00:00</option>
+                            <option value="15:00:00">15:00:00</option>
+                            <option value="16:00:00">16:00:00</option>
+                            <option value="17:00:00">17:00:00</option>
+                        </select>
+                    </div>
+                    <div class = "reservaFormFlexCampos">
+                        <label class = "horaF" for="horaF">Hora Final da Reserva:</label>
+                        <select class = "reservaInput" name="horaF">
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="10:00:00">10:00:00</option>
+                            <option value="11:00:00">11:00:00</option>
+                            <option value="12:00:00">12:00:00</option>
+                            <option value="13:00:00">13:00:00</option>
+                            <option value="14:00:00">14:00:00</option>
+                            <option value="15:00:00">15:00:00</option>
+                            <option value="16:00:00">16:00:00</option>
+                            <option value="17:00:00">17:00:00</option>
+                            <option value="18:00:00">18:00:00</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <div class = "reservaFormFlexCampos2">
+                        <label for="nome">Nome do Solicitante:</label>
+                        <input class = "reservaInput2" type="text" name="nome">
+                    </div>
+                    <div class = "reservaFormFlexCampos2">
+                        <label for="email">Email:</label>
+                        <input class = "reservaInput2" type="email" placeholder="fulano@mail.com" name="email">
+                    </div>
+                    <div class = "reservaFormFlexCampos2">
+                        <label for="telefone">Telefone:</label>
+                        <input id="phone" class = "reservaInput2" type="tel" placeholder="(xx)xxxxx-xxxx" name="telefone" />
+                    </div>
+                </div>
+                <div class = "reservaFormFlexCampos2">
+                    <label for="recursos">Informe os Recursos Extras que irá Precisar:</label>
+                    <textarea name="recursos"></textarea>
+                </div>
+                <div style = "margin-top: 10px; text-align: -webkit-center;">
+                    <div class  = "botaoForm">
+                        <input class="booking-action" type="button" id = "botaoForm" value="Reservar" />
+                        <input class="booking-action upd-reservation" type="button" id = "botaoForm" value="Atualizar Reserva" disabled style="display: none;"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,345 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#alertBox.alert-danger {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+  }
+
+#alertBox.alert {
+  margin-top: 50px;
+  display: none;
+  position: relative;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
+
+/* Loading */
+#indexDireita9>section>.reserva-direita-content {
+    display: none;
+}
+
+.loading {
+    display: flex;
+}
+
+.loading>h2 {
+    margin: 10px;
+}
+
+.loading-container {
+    margin-top: 50px;
+}
+
+.loading>img {
+    margin: 10px !important;
+    width: 150px !important;
+    height: auto !important;
+  }
+
+/* Seção serviços */
+.container-servicos {
+    width: 70%;
+    margin: 0px 80px 0 auto;
+}
+
+.main-menu {
+    border-top: 3px solid #dedada;
+    margin-top: 45px;
+    display: none;
+}
+
+#paginaInicial9.direitaTituloTexto {
+    display: flex;
+    margin-top: 50px;
+}
+
+.direitaTituloTexto h3 {
+    margin-right: 5px;
+    color: #000;
+}
+
+.direitaTituloTexto a {
+    color: black;
+    text-decoration: none;
+}
+
+.direitaTituloTexto a:link a:visited a:active {
+    color: black
+}
+
+.direitaTituloTexto a:hover {
+    text-decoration: underline !important;
+}
+
+.titulo-menu {
+    font-size: 2.6rem;
+    color: #00508a;
+    padding: 10px 0;
+}
+
+.subtitulo-main {
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.container-busca {
+    display: flex;
+    position: relative;
+    margin: 10px 0;
+}
+
+.ui-datepicker-year {
+    display: none;
+}
+
+.buscar-main {
+    width: 100%;
+}
+
+.Busca-texto {
+    width: 100%;
+    height: 35px;
+    float: right;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    border: 2px solid #828282;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    text-indent: 25px;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.Busca-texto::placeholder {
+    color: #dedada;
+}
+
+.loupe>img {
+    width: 25px !important;
+    height: 25px !important;
+    position: absolute !important;
+    right: 10px !important;
+    top: 4px !important;
+    transform: rotate(90deg) !important;
+    cursor: pointer !important;
+}
+
+.calendario-main {
+    width: 35px;
+    height: 35px;
+    border: 2px solid #828282;
+    margin-right: 6px;
+    border-radius: 5px;
+}
+
+.calendario-texto {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: 3px;
+    left: 2px;
+}
+
+.tabela {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    transition-duration: 0.4s;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.tabela td,
+#tabela th {
+    border: 1px solid #ddd;
+    padding: 8px 5px 8px 5px;
+}
+
+.tabela tr:nth-child(odd) {
+    background-color: #e8ecef;
+}
+
+.tabela th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #00508a;
+    color: white;
+    border-left: 2px solid #ddd;
+}
+
+.tabela td {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.tabela td:hover {
+    white-space: normal;
+    text-overflow: inherit;
+    overflow: visible;
+}
+
+.tabela a {
+    color: black;
+}
+
+.tabela a:visited a:active a:link {
+    color: black !important;
+}
+
+.tabela {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    transition-duration: 0.4s;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+/* .space {
+    width: 100px;
+} */
+
+.td-img-user img {
+    display: block;
+    max-width: 100%;
+    height: 30px;
+    margin: 0 auto;
+}
+
+.td-img img {
+    display: block;
+    max-width: 100%;
+    height: 30px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+
+.burger-menu {
+    display: block;
+    margin-left: 100px;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: 1px;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000000;
+    min-width: 200px;
+    z-index: 1;
+    margin-top: 10px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px 10px;
+    text-decoration: none;
+    display: block;
+    box-shadow: 0 5px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: 16px;
+    border-bottom: 1px solid #424242;
+}
+
+.dropdown-content a::after {
+    content: ">";
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #ffffff;
+}
+
+.nobithd {
+    display: none;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.nobithd p {
+    font-size: 1.7rem;
+    color: #00508a;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+/* Modal quem somos */
+/* Media Query */
+@media screen and (max-width: 1023px) {
+    .modal-content {
+        width: 85%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: 80%;
+    }
+
+    .content-top {
+        height: auto;
+        display: block;
+        grid-template-columns: 100%;
+    }
+
+    .flex-content {
+        flex-direction: column;
+        margin: 30px 0;
+    }
+
+    .flex-content>div {
+        margin: 15px 0;
+        align-items: flex-end;
+    }
+
+    .content-bottom {
+        height: auto;
+        display: block;
+    }
+
+    .content-bottom>div {
+        align-items: center;
+    }
+
+    .content-bottom>div:nth-of-type(2) {
+        position: static;
+        /* box-shadow: 0 0 0 2px #ddd, 0 0 0 3px #fff, 0 0 0 4px #ddd; */
+    }
+
+    .content-bottom>div:last-child {
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .content-bottom>div:nth-of-type(2) {
+        bottom: 0;
+    }
+}
+
+
+@media only screen and (max-width: 680px) {
+    .td-img-user img {
+        display: none;
+    }
+}

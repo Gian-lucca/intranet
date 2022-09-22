@@ -1,0 +1,1112 @@
+/*Author Gianlucca Augusto <gianlucca.augusto@extreme.digital>
+ version 1.1
+ copyright Proderj 2021.*/
+
+ .field__item{
+    margin-left: 300px !important;
+ }
+
+
+ h1{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+h2{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+h3{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    color: white;
+    text-transform: uppercase;
+}
+p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    color: black;
+}
+
+.index-corpo-consultas{
+    padding-top: 37px;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 22%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.indexImagemIcones{
+    padding: 0px 25px;
+    display: flex;
+    flex-direction: column;
+}
+.indexRedesSociais{
+    margin-top: 30px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+.indexRedesSociais img {
+    padding: 0px 10px;
+}
+.indexBlocos{
+    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+.index-consultas-bloco-conteudo{
+    letter-spacing: 1px;
+    background-image: url(/sites/intranetProderj/themes/intranetProderj/intranetProderj/imagens/Ícones/Ícones/immybox-arrow.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    padding: 15px 30px;
+    cursor: pointer;
+    width: 280px;
+}
+.index-consultas-bloco-conteudo h2{
+    padding-left: 10px;
+    color: black;
+}
+#indexBlocoConteudo1{
+    background-color: #00508a;
+}
+#indexBlocoConteudo2{
+    background-color: white;
+}
+#indexBlocoConteudo3{
+    background-color: white;
+}
+#indexBlocoConteudo4{
+    background-color: white;
+}
+#indexBlocoConteudo5{
+    background-color: white;
+}
+#indexBloco1{
+    border-radius: 15px 15px 0px 0px;
+}
+#bloco1h2{
+    color: white;
+}
+#bloco1B{
+    display: none;
+}
+#indexBloco2{
+    border-radius: 15px 15px 0px 0px;
+}
+#bloco2W{
+    display: none;
+}
+#indexBloco3{
+    border-radius: 15px 15px 0px 0px;
+}
+#bloco3W{
+    display: none;
+}
+#indexBloco4{
+    border-radius: 15px 15px 0px 0px;
+}
+#bloco4W{
+    display: none;
+}
+#indexBloco5{
+    border-radius: 15px 15px 0px 0px;
+}
+#bloco5W{
+    display: none;
+}
+
+.indexBlocoSubConteudo{
+    background-color: rgb(0, 91, 156);
+}
+.indexBlocoSubConteudo a{
+    color: white;
+}
+.indexBlocoSubConteudo a:link a:active a:visited{
+    color: white;
+}
+.indexBlocoSubConteudo li:hover{
+    background-color: #00508a;
+}
+.indexBlocoSubConteudo li{
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.indexBlocoSubConteudo h3{
+    color: white;
+}
+.indexBlocoSubConteudo{
+    width: 280px;
+    border-radius: 0px 0px 15px 15px;
+}
+.indexBlocoSubConteudo img{
+    width: 10px;
+    height: auto;
+}
+.indexLogoGoverno{
+    width: 98%;
+    height: auto;
+    margin: 10px 5px 0px 35px;
+}
+
+/* Largura da barra de rolagem */
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+/* Fundo da barra de rolagem */
+::-webkit-scrollbar-track-piece {
+    background-color: #EEE;
+}
+
+/* Cor do indicador de rolagem */
+::-webkit-scrollbar-thumb:vertical,
+::-webkit-scrollbar-thumb:horizontal {
+    background-color: #BAC0C4;
+}
+
+/* Cor do indicador de rolagem - ao passar o mouse */
+::-webkit-scrollbar-thumb:vertical:hover,
+::-webkit-scrollbar-thumb:horizontal:hover {
+    background-color: #717171
+}
+
+.flexslider{
+    /* position: relative !important; */
+    margin-top: 34px !important;
+   /* padding: 0px 10px !important; */
+    width: 77% !important;
+    float: right !important;
+    margin-bottom: 33px;
+}
+
+.aos-init ,.aos-animate{
+    position: relative;
+    left: 334px !important;
+    float: left !important;
+    width: 100%;
+    height: 192px;
+    top: -45px;
+};
+
+
+.section-container{
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /*margin: 5px 5px 0px 5px;*/
+}
+
+/*.align-left{
+    width: 35% !important;
+    height: auto !important;
+    margin: 30px !important;
+}*/
+
+.js-quickedit-page-title, .page-title{
+    display: none !important;
+}
+
+.indexDireitaColunas{
+    display: flex !important;
+    padding: 0px 10px !important;
+    margin-top: 30px !important;
+    justify-content: space-between !important;
+}
+.indexDireitaColunaEsquerda{
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+}
+.indexDireitaColunaEsquerdaCima {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    float: left;
+    width: 45%;
+}
+.indexDireitaColunaEsquerdaCima img{
+    margin: 5px 5px 0px 5px;
+    width: 205px;
+    height: 134px;
+    padding: 5px;
+    border: 1px solid #BAC0C4;
+}
+.indexDireitaColunaEsquerdaCimaVideo{
+    text-align: center;
+}
+.indexDireitaColunaEsquerdaFotos{
+    text-align: center;
+}
+.indexDireitaColunaEsquerdaFotosImg{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.indexDireitaColunaEsquerdaBaixo{
+    margin-top: 10px;
+    text-align: center;
+}
+.indexDireitaColunaEsquerdaBaixoImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.indexDireitaColunaDireita{
+    text-align: center;
+    display: table;
+    margin-top: -26px;
+    float: right;
+    margin-right: 5px;
+    width: 24%;
+    height: auto;
+}
+.indexDireitaColunaDireita a{
+    color: black;
+}
+.indexDireitaColunaDireita a:visited a:link a:active{
+    color: black;
+}
+.indexDireitaColunaDireita a:hover{
+    color: black;
+    text-decoration: underline;
+}
+.indexDireitaColunaDireita ul{
+    margin-top: 5px;
+}
+.indexDireitaColunaDireita li{
+    border: 1px solid #BAC0C4;
+    padding: 5px;
+    display: flex;
+    text-align: left;
+    width: 98%;
+}
+.indexDireitaColunaDireita p{
+    padding: 4px 0px 0px 10px
+}
+
+.cabecalhoPretoBotoes{
+    display: flex !important;
+    justify-content: end !important;
+    padding-right: 10px !important;
+}
+.cabecalhoPretoBotoes h3{
+    color: white !important;
+    margin-left: 5px !important;
+}
+.cabecalhoPretoBotoes i{
+    color: white !important;
+}
+.cabecalhoPretoBotoes button{
+    background-color: transparent !important;
+    border: none !important;
+    display: flex !important;
+    align-items: center !important;
+    cursor: pointer !important;
+    margin-left: 30px !important;
+}
+
+.social-midia-sup{
+    padding-left: 20px;
+    display: flex;
+    justify-content: end;
+    padding-right: 10px;
+}
+
+button{
+    background-color: transparent !important;
+    border: none !important;
+    display: flex !important;
+    align-items: center !important;
+    cursor: pointer !important;
+    margin-left: 10px !important;
+}
+
+.svg-inline--fa.fa-adjust.fa-w-16{
+    color: white;
+    margin-right: 6px;
+}
+
+.svg-inline--fa.fa-user-circle.fa-w-16{
+    color: white;
+    margin-right: 6px;
+}
+
+.botao-aplicar, .button, .image-button{
+    margin-right: 1em !important;
+    margin-left: 0 !important;
+    margin-top: 4.6em !important;
+    background-color: #00508a !important;
+    color: #fff !important;
+    padding: 4px !important;
+    border: 0 !important;
+}
+
+.form-select{
+    padding: 4px !important;
+    background-color: #00508a !important;
+    color: #fff !important;
+    border: 0 !important;
+}
+
+.principal2{
+    margin-left: 43px !important;
+}
+
+.titulo-secao{
+    white-space: nowrap !important;
+    margin-top: 67px !important;
+    margin-bottom: 7px !important;
+    margin-left: 70px !important;
+}
+
+.flex-control-nav{
+    bottom: 0px !important;
+    display: none;
+}
+
+.views-view-grid .views-col{
+    width: 98% !important; 
+}
+
+.views-view-grid .views-row{
+    display: inline-flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    /*margin-left: 65px;*/
+    width: 80% !important;
+}
+
+
+
+.comunicados{
+    display: inline-flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-around !important;  
+    margin-left: 284px !important;
+}
+
+.image-style-imagem-noticias-481x350 {
+    width: 300px;
+    height: 200px;
+}
+
+.form-item, .form-actions {
+    margin-top: 73px;
+    margin-bottom: 1em;
+    margin-left: 123px;
+}
+
+.form--inline{
+    margin-left: 170px !important;
+}
+
+.noticia-gride .views-col .col-1{
+    padding: 14px !important;
+}
+
+.text-formatted{
+    margin-left: 323px;
+}
+
+/* formulario */
+
+.indexDireitaInicial{
+    padding: 0px 10px;
+}
+.direitaTitulo{
+    margin-top: 30px;
+    display: none !important;
+}
+
+.reservaDireitaCimaCalendario{
+    /*float: inline-end !important;*/
+    position: absolute;
+}
+
+.direitaTitulo h1{
+    margin-top: 30px;
+    color: #00508a;
+}
+.direitaTituloLinha{
+    background-color: #717171;
+    width: 100%;
+    height: 2px;
+}
+.direitaTituloTexto{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.direitaTituloTexto h3{
+    margin-right: 5px;
+    margin-top: 5px;
+}
+.direitaTituloTexto a{
+    color: black;
+}
+.direitaTituloTexto a:link a:visited a:active{
+    color: black;
+}
+.direitaTituloTexto a:hover{
+    text-decoration: underline;
+}
+.FormularioDireitaOpcoes{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.formularioDireitaOpcao{
+    background-color: #00508a;
+    width: 220px;
+    height: 100px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.formularioDireitaOpcao h2{
+    color: white;
+    font-weight: bold;
+}
+.formularioDireitaAbas{
+    margin-top: 30px;
+}
+.formularioDireitaAbaDocumentos ul{
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.formularioDireitaAbaDocumentos li{
+    background-color: #00508a;
+    padding: 10px 25px;
+    width: 44%;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+.formularioDireitaAbaDocumentosLi{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.formularioDireitaAbaDocumentosLi p{
+    color: white;
+    width: 395px;
+}
+.formularioDireitaAbaDocumentosLi h2{
+    color: white;
+}
+.formularioDireitaAbaDocumentos img{
+    width: auto;
+    height: 25px
+}
+
+.field-content>a{
+    /*margin: 7px !important;*/
+    display: block !important;
+}
+.field-content{
+    display: block;
+    text-align: center;
+   /* margin-bottom: 25px;*/
+  /* margin-top: 30px;*/
+    color: #00508a;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+/* Aniversariantes */
+
+.aniversariantesDireita{
+    margin-top: 30px;
+}
+/* tabela*/
+#tabelaImgPessoas{
+    width: 80px;
+    height: auto;
+    border-radius: 100%;
+}
+#imgPessoa{
+    width: 7%;
+}
+#tabela_length{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+#tabela_filter{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+.dataTables_info{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+#tabela_paginate{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+.dt-buttons button{
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: #00508a;
+    border: solid 1px #00508a;
+    padding: 10px 20px 10px 20px;
+    margin-right: 10px;
+    float: left;
+}
+.dt-buttons button:hover{
+    border: solid 1x #00508a;
+    background-color: white;
+    color: #00508a;
+}
+.tabela{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    transition-duration: 0.4s;
+    border-collapse: collapse;
+    text-align: center;
+}
+.tabela td, #tabela th{
+    border: 1px solid #ddd;
+    padding: 8px 5px 8px 5px;
+}
+.tabela tr:nth-child(even){
+    background-color: #e8ecef;
+}
+.tabela tr:hover{
+    background-color: #ddd;
+}
+.tabela th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #00508a;
+    color: white;
+}
+.tabela td{
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+}
+.tabela td:hover{
+    white-space:normal;
+    text-overflow: inherit;
+    overflow: visible;
+}
+.tabela a{
+    color: black;
+}
+.tabela a:visited a:active a:link{
+    color: black;
+}
+
+.tabela {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    transition-duration: 0.4s;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.reservaCompleto {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 134%;
+    width: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -108px;
+}
+
+.reserva {
+    width: 64%;
+    height: 80%;
+    border-radius: 15px;
+    margin-left: 20px;
+    margin-top: 21px;
+}
+
+.reservaDireita{
+    margin-left: 265px !important;
+}
+
+.reserva-div1 {
+    background-color: #00508a;
+    height: 20%;
+    width: 100%;
+    border-radius: 15px 15px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reserva-div2 {
+    height: 80%;
+    background: white;
+    border-radius: 0px 0px 15px 15px;
+    padding: 0px 100px 0px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#iconeFechar {
+    width: 40px;
+    height: auto;
+    margin-right: 61px;
+}
+
+.reservaCompleto-botao {
+    position: absolute;
+    top: 15%;
+    right: 15%;
+    cursor: pointer;
+}
+
+.reserva-div1 h1 {
+    color: white;
+    letter-spacing: 2px;
+}
+
+.reservaFormFlexCampos input {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+.reservaInput {
+    padding: 10px;
+    width: 50%;
+    background-color: #00508a;
+    border: 1px solid #00508a;
+    border-radius: 15px;
+    color: white;
+}
+
+.reservaInput {
+    padding: 10px;
+    width: 54%;
+    background-color: #00508a;
+    border: 1px solid #00508a;
+    border-radius: 15px;
+    color: white;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.reservaFormFlexCampos {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 58px;
+    font-size: 18px;
+    font-family: system-ui;
+    padding: 3px;
+}
+
+.reservaFormFlex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.reservaFormFlexCampos2 textarea {
+    padding: 10px;
+    width: 60%;
+    height: 50px;
+    resize: none;
+}
+
+.reservaFormFlexCampos2 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#botaoForm.booking-action {
+    padding: 10px 25px;
+    border: 0;
+    border-radius: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    background-color: #00508a;
+    color: white;
+    cursor: pointer;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ul.inline, ul.links.inline{
+    display: none !important;
+}
+
+/*Ana Leticia edit*/
+
+.indexLogoGoverno img {
+    margin-bottom: 24%;
+}
+
+/*Ana Leticia edit end*/
+
+@media only screen and (min-width: 1240px) and (max-width: 1280px){
+
+    .indexLogoGoverno {
+        width: 98% !important;
+        height: auto !important;
+        margin: 10px 5px 0px 24px !important;
+    }
+
+    .indexDireitaColunaEsquerdaCima img{
+        width: 178px !important;
+        height: auto !important;
+    }
+
+    .field-content {
+        font-size: 16px !important; 
+    }
+
+    video{
+         height: 124px !important;
+    }
+}
+
+
+@media only screen and (min-width: 1379px) and (max-width: 1439px){
+    .indexDireitaColunaEsquerdaCima img {
+        margin: 5px 5px 0px 5px;
+        width: 206px !important;
+        height: 125px !important;
+        padding: 5px;
+        border: 1px solid #BAC0C4;
+    }
+
+    .aos-init, .aos-animate {
+        position: relative;
+        left: 334px !important;
+        float: left !important;
+        width: 100%;
+        height: 206px;
+        top: -45px;
+    }
+}
+
+@media only screen and (min-width: 1500px) and (max-width: 1680px){
+
+    .indexLogoGoverno{
+        width: 98% !important;
+        height: auto !important;
+        margin: 10px 5px 0px 94px !important;
+        
+    }
+
+    /*.section-container{
+        width: 93% !important;
+         top: -94px; 
+        height: 230px !important;
+        margin-left: 156px !important;
+    }*/
+
+    .text-formatted {
+        margin-left: 25% !important;
+    }
+
+    .comunicados {
+        display: inline-flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-around !important;
+        margin-left: 238px !important;
+    }
+    .form-item, .form-actions {
+        margin-top: 73px;
+        margin-bottom: 1em;
+        margin-left: 81px !important;
+    }
+}
+/*
+@media only screen and (min-width: 1681px) and (max-width: 1930px){
+
+    .section-container {
+        width: 76% !important;
+         text-align: justify; 
+        padding: 1em 0px;
+        margin: 0 auto !important;
+        margin-left: 251px !important;
+    }
+
+    .indexLogoGoverno {
+        width: 72% !important;
+        height: auto !important;
+        margin: 10px 5px 0px 35px !important;
+    }
+
+    .text-formatted {
+        margin-left: 202px !important;
+    }
+
+    .aos-init, .aos-animate {
+        position: relative;
+        left: 441px !important;
+        float: left !important;
+        width: 100%;
+        height: 226px;
+        top: -45px;
+    }
+
+    .principal2 {
+        margin-left: -23px !important;
+        margin-top: -53px !important;
+    } 
+} */
+
+
+/*Responsividade - Ana Letícia*/
+
+@media only screen and (min-width: 1200px) and (max-width: 1330px){
+
+    video {
+      height: 115px !important;
+      margin-right: 5px !important;
+    }
+    
+    .indexDireitaColunaEsquerdaCima img {
+      width: 190px !important;
+      height: 115px !important;
+    }
+    
+    .indexDireitaColunaEsquerdaCima {
+      margin-left: -5% !important;
+    }
+    
+    .indexLogoGoverno img {
+      width: 75% !important;
+      margin-left: 8% !important;
+    }
+
+}
+
+@media only screen and (min-width: 1331px) and (max-width: 1430px){
+    
+    .indexDireitaColunaEsquerdaCima img {
+      width: 207px !important;
+      height: 125px !important;
+    }
+    
+    video {
+      height: 125px !important;
+      margin-right: 5px !important;
+    }
+    
+    .indexDireitaColunaEsquerdaCima {
+      margin-left: -3% !important;
+    }
+    .indexLogoGoverno img {
+        width: 75% !important;
+        margin-left: 8% !important;
+      }
+}
+
+@media only screen and (min-width: 1431px) and (max-width: 1530px){
+    
+    .indexDireitaColunaEsquerdaCima {
+      margin-left: 0% !important;
+    }
+
+    video {
+        height: 125px !important;
+        margin-right: 5px !important;
+    }
+
+    .indexDireitaColunaEsquerdaCima img {
+        width: 207px !important;
+        height: 125px !important;
+    }
+
+    .indexLogoGoverno img {
+        width: 75% !important;
+        margin-left: 8% !important;
+    }
+}
+
+@media only screen and (min-width: 1531px) and (max-width: 1630px){
+    
+    .indexDireitaColunaEsquerdaCima {
+      width: 30% !important;
+      margin-left: 2% !important;
+    }
+    
+    .indexLogoGoverno img {
+      margin-left: 0% !important;
+      width: 75% !important;
+    }
+
+    video {
+        height: 125px !important;
+        margin-right: 5px !important;
+    }
+
+    .indexDireitaColunaEsquerdaCima img {
+        width: 207px !important;
+        height: 125px !important;
+    }
+}
+    
+@media only screen and (min-width: 1631px) and (max-width: 1730px){
+    
+    video {
+      height: 135px !important;
+      margin-right: 5px !important;
+    }
+    
+    .indexDireitaColunaEsquerdaCima img {
+      width: 230px !important;
+      height: 135px !important; 
+    }
+    
+    .indexDireitaColunaEsquerdaCima {
+      width: 30% !important;
+      margin-left: 4% !important;
+      margin-top: 1% !important;
+    }
+
+    .indexLogoGoverno img {
+        margin-left: 0% !important;
+        /* width: 75% !important; */
+    }
+}
+
+@media only screen and (min-width: 1731px) and (max-width: 1830px){
+    
+    .indexDireitaColunaEsquerdaCima {
+      width: 25% !important;
+      margin-left: 8% !important;
+      margin-top: 2% !important;
+    }
+    
+    .indexLogoGoverno img {
+      width: 65% !important;
+      margin-left: 10% !important;
+    }
+
+    .indexDireitaColunaEsquerdaCima img {
+        width: 230px !important;
+        height: 135px !important; 
+    }
+
+    video {
+        height: 135px !important;
+        margin-right: 5px !important;
+    }
+}
+
+@media only screen and (min-width: 1831px) and (max-width: 1930px){
+    
+    video {
+      height: 150px !important;
+      margin-right: 5px !important;
+    }
+    
+    .indexDireitaColunaEsquerdaCima img {
+      width: 255px !important;
+      height: 150px !important;
+    }
+    
+    .indexDireitaColunaEsquerdaCima {
+      margin-left: 9% !important;
+      margin-top: 1% !important;
+    }
+    
+    .indexLogoGoverno img {
+      width: 80% !important;
+      margin-left: 5% !important;
+    }
+}
+
+@media only screen and (min-width: 1931px) and (max-width: 2030px){
+    
+    
+    .indexDireitaColunaEsquerdaCima {
+      margin-left: 10% !important;
+      margin-top: 1% !important;
+    }
+
+    .indexLogoGoverno img {
+        width: 60% !important;
+        margin-left: 5% !important;
+    }
+
+    video {
+        height: 150px !important;
+        margin-right: 5px !important;
+    }
+      
+    .indexDireitaColunaEsquerdaCima img {
+        width: 255px !important;
+        height: 150px !important;
+    }
+}
+
+@media only screen and (min-width: 2031px) and (max-width: 2130px){
+    
+    .section-container {
+      margin: -50px 32px !important;
+    }
+    
+    .indexDireitaColunaEsquerdaCima {
+      margin-top: 1% !important;
+      margin-left: 10% !important;
+    }
+
+    .indexLogoGoverno img {
+        width: 60% !important;
+        margin-left: 5% !important;
+    }
+
+    video {
+        height: 150px !important;
+        margin-right: 5px !important;
+    }
+      
+    .indexDireitaColunaEsquerdaCima img {
+        width: 255px !important;
+        height: 150px !important;
+    }
+}

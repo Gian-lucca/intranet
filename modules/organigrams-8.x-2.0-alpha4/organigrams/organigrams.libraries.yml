@@ -1,0 +1,7 @@
+organigrams:
+  version: 2.x
+  css:
+    layout:
+      css/orgchart-layout.css: {}
+    theme:
+      css/orgchart-theme.css: {}

@@ -1,0 +1,9 @@
+# reserva_client.settings.yml
+# Arquivo de configurações básicas do módulo.
+#
+# author Jose Maciel <jose.maciel@extreme.digital>
+# version 1.0
+# copyright Proderj 2022.
+
+message: 'Aniversario Client'
+langcode: 'en'

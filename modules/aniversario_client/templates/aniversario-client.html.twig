@@ -1,0 +1,76 @@
+{#
+# Template do módulo.
+# version 1.0
+# copyright Proderj 2022.
+#}
+
+<section id="indexDireita9" class="indexDireita">
+    <div class="esquerda"></div>
+    <section id="indexDireita9" class="container-servicos">
+        <div class="reservaDireita loading-container">
+            <div class="reservaDireitaCima loading">
+                <h2>Aguarde</h2>
+                <img src="{{ m_path ~ '/img/glass_spheres-loading.gif' }}">
+            </div>
+        </div>
+        <div class="main-menu">
+            <div id="paginaInicial9" class="direitaTituloTexto">
+                <a href="#">
+                    <h3>Página Inicial</h3>
+                </a>
+                <h3>></h3>
+                <a href="#">
+                    <h3>Serviços</h3>
+                </a>
+                <h3>></h3>
+                <a href="#">
+                    <h3>Aniversariantes</h3>
+                </a>
+            </div>
+            <h1 class="titulo-menu">Aniversariantes</h1>
+            <div class="container-busca">
+                <div class="calendario-main">
+                    <label for="date">
+                        <input class="calendario-texto" id="datepicker" type="image"
+                            src={{ m_path ~ '/img/calendar.png' }}>
+                    </label>
+                </div>
+                <div class="buscar-main">
+                    <input class="Busca-texto" type="text" placeholder="Quem você procura ?">
+                </div>
+                <div class="loupe">
+                    <img src={{ m_path ~ '/img/loupe-blue.png' }} alt="loupe">
+                </div>
+            </div>
+            <h2 class="subtitulo-main"> Aniversariantes do dia:</h2>
+            <div class="reservaDireitaTabela">
+                <table id="who-table" class="tabela" id="tabela3">
+                    <thead>
+                        <tr>
+                            <!-- <th id="width">ID</th> -->
+                            <th id="width">Nome</th>
+                            <th id="width">Aniversário</th>
+                            <th id="width">Cargo</th>
+                            <th id="width">ua</th>
+                            <th id="width">E-mail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {# alerta #}
+        <div id="alertBox"class="alert alert-danger" role="alert">
+            <p>Ocorreu um erro de comunicação com o servidor.</p>
+            <p>Pressione F5 para atualizar a página.</p>
+            <p>Caso o erro persista contate o administrador.</p>
+        </div>
+        <div id="noBirthday" class="nobithd">     
+            <p>Nenhum Aniversariante Nessa Data</p>      
+        </div>
+    </section>
+</section>

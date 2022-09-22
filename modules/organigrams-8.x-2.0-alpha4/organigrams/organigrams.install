@@ -1,0 +1,97 @@
+<?php
+/**
+ * @file
+ * Installation hooks for Organigrams module.
+ */
+
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\taxonomy\Entity\Vocabulary;
+
+/**
+ * Update taxonomy term fields.
+ */
+function organigrams_update_8001(&$sandbox) {
+  // Specify the fields to delete.
+  $fields_to_delete = [
+    'field_o_background_color',
+    'field_o_background_color_hover',
+    'field_o_bold_border',
+    'field_o_border_color',
+    'field_o_border_color_hover',
+    'field_o_font_color',
+    'field_o_font_color_hover',
+    'field_o_image_alignment',
+    'field_o_image_url',
+  ];
+
+  // Load all vocabularies.
+  $vocabularies = Vocabulary::loadMultiple();
+
+  // Iterate through them.
+  if (!empty($vocabularies)) {
+    foreach ($vocabularies as $vid => $vocabulary) {
+      // Stop if the vocabulary is no organigram.
+      $organigram_settings = $vocabulary->getThirdPartySettings('organigrams');
+      if (empty($organigram_settings)) {
+        continue;
+      }
+
+      // Delete all vocabulary field data.
+      foreach ($organigram_settings as $key => $value) {
+        $vocabulary->unsetThirdPartySetting('organigrams', $key);
+      }
+      // Leave a settings to recognize this is an organigram.
+      $vocabulary->setThirdPartySetting('organigrams', 'is_organigram', TRUE);
+
+      // Save settings.
+      $vocabulary->save();
+
+      // Iterate through the taxonomy term fields and delete them.
+      foreach ($fields_to_delete as $field_name) {
+        $field = FieldConfig::loadByName('taxonomy_term', $vid, $field_name);
+        if (!empty($field)) {
+          $field->delete();
+        }
+      }
+
+      // Fire the create fields function again to add the new css field.
+      organigrams_create_term_fields($vid);
+
+      // Update the value of field_o_position in the terms.
+      $tree = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid, 0, NULL, TRUE);
+      if (!empty($tree)) {
+        foreach ($tree as $term) {
+          // Get the position of the child.
+          $position = $term->get('field_o_position')->first()->getValue();
+
+          // If the position is l or r, update it to s.
+          if (in_array($position['value'], ['l', 'r'])) {
+            $term->field_o_position->setValue('s');
+            $term->save();
+          }
+        }
+      }
+    }
+  }
+
+  // Update the field storage of field_o_position: remove l and r, add s.
+  $field_o_position = FieldStorageConfig::loadByName('taxonomy_term', 'field_o_position');
+  $new_allowed_values = [
+    'u' => 'Below the parent',
+    's' => 'Staff function',
+  ];
+  $field_o_position->setSetting('allowed_values', $new_allowed_values);
+  $field_o_position->save();
+
+  // Delete the field storages of the deleted fields.
+  foreach ($fields_to_delete as $field_name) {
+    $field_storage = FieldStorageConfig::loadByName('taxonomy_term', $field_name);
+    if (!empty($field_storage)) {
+      $field_storage->delete();
+
+      // Also delete from config.
+      Drupal::configFactory()->getEditable('field.storage.taxonomy_term.' . $field_name)->delete();
+    }
+  }
+}

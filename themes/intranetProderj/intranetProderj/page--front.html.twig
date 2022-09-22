@@ -1,0 +1,150 @@
+
+{% include directory ~ "/partials/header.html.twig" %}
+
+{% if page.sliderPrincipal  %}
+    <div class="slider-fixo" data-aos="zoom-in" data-aos-duration="2000">
+        {{ page.sliderPrincipal }}       
+    </div><!-- /slider-fixo -->   
+{% endif %}
+
+<div class = "indexDireitaColunaDireita">
+ <h1>Atalhos</h1>
+   <ul>
+  <div id = "comunicados" class = "iconePointerSublinhado">
+    <a href = "Comunicados"><li>
+         <img src = {{ base_path ~ active_theme_path() ~ '/imagens/Ícones/Atl_Icon_Comunicados.png' }}>
+             <p>Comunicados</p>
+     </li></a>
+  </div>
+    <a href = "https://proderj.webmail.rj.gov.br/"><li>
+      <img src = {{ base_path ~ active_theme_path() ~ '/imagens/Ícones/Atl_icon_webmail.png' }}>
+        <p>Webmail</p>
+          </li></a>
+     <a href = "https://www.proderj.rj.gov.br/"><li>
+       <img src = {{ base_path ~ active_theme_path() ~ '/imagens/Ícones/Atl_icon_portal_proderj.png' }}>
+         <p>Portal PRODERJ</p>
+           </li></a>
+      <a href = "/reserva"><li>
+         <img src = {{ base_path ~ active_theme_path() ~ '/imagens/Ícones/Atl_icon_sala_de_reunião.png' }}>
+           <p>Sala de Reunião</p>
+           </li></a>
+        <div id = "quem2" class = "iconePointerSublinhado">
+       <a href = "/Quem"><li>
+          <img src = {{ base_path ~ active_theme_path() ~ '/imagens/Ícones/Atl_Icon_Quem_e_Onde.png' }}>
+            <p>Quem & Onde</p>
+              </li></a>
+           </div>
+        <a href = "/ASCPDERJ"><li>
+            <img src = {{ base_path ~ active_theme_path() ~ '/imagens/Ícones/Atl_Icon_ASCPDERJ.png' }}>
+             <p>ASCPDERJ</p>
+            </li></a>
+        <a href = "/Diga_e_tal"><li>
+             <img src = {{ base_path ~ active_theme_path() ~ '/imagens/Ícones/Atl_Icon_Digae_e_Tal.png' }}>
+              <p>Diga & Tal</p>
+               </li></a>
+              <a href = "/Mapeamento"><li>
+              <img src = {{ base_path ~ active_theme_path() ~ '/imagens/Ícones/Atl_Icon_Mapeamento.png' }}>
+              <p>Mapeamento de Processos Internos</p>
+              </li></a>
+              </ul>
+</div>
+<div class="top">
+<div class="indexDireitaColunaEsquerdaCima">
+    {% if page.videosPrincipal %}
+    <section id="video" data-aos="fade-right" class="programas-acoes branco aos-init aos-animate"  data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+        <div class="section-container" id="video-section">
+            <div class="titulo-secao"><span>Vídeo</span></div>
+                {{ page.videosPrincipal }}
+        </div>
+    </section>
+    {% endif %}
+
+    {% if page.PrincipaisServicos2 %}
+    <section data-aos="fade-left" class="programas-acoes branco aos-init aos-animate">
+        <div class="section-container">    
+            <div class="titulo-secao">
+                <span>Principais Serviços</span>
+            </div>       
+            {{ page.PrincipaisServicos2 }}
+        </div>    
+    </section><!-- /Principais Serviços -->
+    {% endif %}
+
+    {% if page.PrincipaisServicos %}
+    <section data-aos="fade-left" class="programas-acoes branco aos-init aos-animate">
+        <div class="section-container">    
+            <div class="titulo-secao">
+                <span>Programa de Capacitação</span>
+            </div>       
+            {{ page.PrincipaisServicos }}
+        </div>    
+    </section><!-- /Principais Serviços -->
+    {% endif %}
+</div>
+
+ <!--    {% if page.flipCard %}
+    <section class="section-container aos-init aos-animate" data-aos="flip-down" data-aos-easing="ease-out-cubic">
+    	<div class="section-container">    
+            <div class="titulo-secao">
+                <span>Programa de Capacitação</span>
+            </div>  
+        {{ page.flipCard  }}
+        </div>
+    </section>
+    {% endif %}-->
+</div>
+
+
+
+{% if page.noticiasPrincipal %}
+    <section class="banner branco noticias" class="programas-acoes branco aos-init aos-animate">
+        {{ page.noticiasPrincipal }}
+    </section>
+    <hr class="gradiente">
+{% endif %}
+
+{% if page.bannerPrincipal %}
+    <section class="banner branco">
+        <div class="section-container aos-init aos-animate" data-aos="flip-down" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+            <div class="banner-principal">
+                {{ page.bannerPrincipal }}
+            </div>
+        </div>
+    </section>
+    <hr class="gradiente">
+{% endif %}
+
+{% if page.publicacoes %}
+    <section data-aos="fade-left" class="programas-acoes branco aos-init aos-animate">
+        <div class="section-container">    
+            <div class="titulo-secao">
+                <span>Publicações</span>
+            </div>       
+            {{ page.publicacoes }}
+        </div>    
+    </section><!-- /linkUteis -->
+    <hr class="gradiente">
+{% endif %}
+
+{% if page.dadosPrincipal %}
+    <section class="programas-acoes branco" data-aos="fade-up-right" data-aos-easing="ease-out-cubic" data-aos-duration="2000" class="aos-init aos-animate">
+        <div class="section-container">
+            <div class="titulo-secao">
+                <span>ISP Dados</span>
+                <p></p>
+            </div>
+            <div class="dados-principal">
+                {{ page.dadosPrincipal }}
+            </div>
+
+        </div>
+    </section>
+<hr class="gradiente">
+{% endif %}
+
+
+<!-- VOLTAR AO TOPO 
+
+    <a id="back2Top" title="Voltar ao topo" href="#">&#10148;</a>
+
+{% include directory ~ "/partials/footer.html.twig" %}-->

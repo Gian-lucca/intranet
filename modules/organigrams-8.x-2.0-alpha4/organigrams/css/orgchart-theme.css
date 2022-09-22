@@ -1,0 +1,116 @@
+/* Item styling. */
+.orgchart .nodecontent {
+  width: 150px;
+  min-height: 50px;
+  background-color: #ffffff;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 0;
+  border: 1px solid #000000;
+  color: #000000;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+/* Image styling. */
+.orgchart .nodecontent img {
+  width: 50px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+/* Link styling. */
+.orgchart a.nodecontent {
+  background-color: #eeeeee;
+}
+
+.orgchart a.nodecontent:hover {
+  background-color: #dddddd;
+}
+
+/* Line color. */
+.orgchart li::before,
+.orgchart li::after,
+.orgchart .nodecontent::after,
+.orgchart .nodecontent::before,
+.orgchart ul.vertical::before {
+  border-color: #000000;
+}
+
+/* Line radius. */
+.orgchart li:first-child::before,
+.orgchart .nodeassists > li:nth-child(odd)::before,
+.orgchart ul.vertical > li:first-child::before {
+  border-top-left-radius: 0;
+}
+
+.orgchart li:last-child::before,
+.orgchart .nodeassists > li:nth-child(even)::before {
+  border-top-right-radius: 0;
+}
+
+.orgchart ul.vertical > li:last-child::before {
+  border-bottom-left-radius: 0;
+}
+
+.orgchart ul.vertical::before {
+  border-bottom-right-radius: 0;
+}
+
+/* Line width. */
+.orgchart li:not(:only-child)::before,
+.orgchart ul.vertical > li:first-child::before,
+.orgchart ul.vertical > li > .nodecontent::before {
+  border-top-width: 1px;
+}
+
+.orgchart li:last-child::before,
+.orgchart .nodeassists > li:nth-child(even)::before,
+.orgchart .nodeassists > li:nth-child(odd)::after,
+.orgchart ul.vertical::before {
+  border-right-width: 1px;
+}
+
+.orgchart .nodeassists > li:nth-child(odd)::after {
+  right: 0;
+}
+
+.orgchart ul.vertical > li:last-child::before,
+.orgchart ul.vertical::before {
+  border-bottom-width: 1px;
+}
+
+.orgchart li:first-child::before,
+.orgchart .nodecontent::after,
+.orgchart .nodecontent::before,
+.orgchart .nodeassists > li:nth-child(odd)::before,
+.orgchart ul.vertical > li::before,
+.orgchart ul.vertical > li:first-child::before {
+  border-left-width: 1px;
+}
+
+/* Corrections when adjusting border sizes. */
+.orgchart ul.vertical::before {
+  top: -9px;
+  left: calc(50% - 10px);
+}
+
+.orgchart .nodecontent:after,
+.orgchart .nodeassists > li > .nodecontent::after {
+  bottom: -21px;
+}
+
+.orgchart .nodecontent::before {
+  top: -21px;
+}
+
+.orgchart ul.vertical > li > .nodecontent::before {
+  width: 9px;
+  left: -10px;
+}

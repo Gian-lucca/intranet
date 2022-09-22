@@ -1,0 +1,5 @@
+entity.taxonomy_vocabulary.view:
+  title: 'View'
+  base_route: entity.taxonomy_vocabulary.overview_form
+  route_name: organigrams.view
+  weight: -10

@@ -1,0 +1,15 @@
+#
+# Router do módulo.
+#
+# author Jose Maciel <jose.maciel@extreme.digital>
+# version 1.0
+# copyright Proderj 2022.
+#
+
+reserva_client:
+  path: '/reserva'
+  defaults:
+    _controller: '\Drupal\reserva_client\Controller\ReservaController::render'
+    _title: 'Reserva de Sala'
+  requirements:
+    _permission: 'access content'

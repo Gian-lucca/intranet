@@ -1,0 +1,15 @@
+#
+# Router do módulo.
+#
+# author Jose Maciel <jose.maciel@extreme.digital>
+# version 1.0
+# copyright Proderj 2022.
+#
+
+aniversario_client:
+  path: '/birthday'
+  defaults:
+    _controller: '\Drupal\aniversario_client\Controller\AniversarioController::renderAniversario'
+    _title: 'Aniversario'
+  requirements:
+    _permission: 'access content'

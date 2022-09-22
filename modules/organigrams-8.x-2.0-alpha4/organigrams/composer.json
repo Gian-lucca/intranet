@@ -1,0 +1,26 @@
+{
+  "name": "drupal/organigrams",
+  "type": "drupal-module",
+  "description": "Organigrams provides the ability to easily create and manage organization charts, also knows as organigrams or organograms.",
+  "keywords": [
+    "Drupal",
+    "organigrams"
+  ],
+  "license": "GPL-2.0+",
+  "homepage": "https://drupal.org/project/organigrams",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Patrick Scheffer (PatrickScheffer)",
+      "homepage": "https://www.drupal.org/u/patrickscheffer",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "issues": "https://drupal.org/project/issues/organigrams",
+    "source": "https://cgit.drupalcode.org/organigrams"
+  },
+  "require": {
+    "drupal/core": "^8 || ^9"
+  }
+}

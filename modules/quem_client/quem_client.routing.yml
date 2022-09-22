@@ -1,0 +1,16 @@
+
+#
+# Router do módulo.
+#
+# author Jose Maciel <jose.maciel@extreme.digital>
+# version 1.0
+# copyright Proderj 2022.
+#
+
+quem_client:
+  path: '/Quem'
+  defaults:
+    _controller: '\Drupal\quem_client\Controller\Quem_somosController::render_quem'
+    _title: 'Quem Somos'
+  requirements:
+    _permission: 'access content'

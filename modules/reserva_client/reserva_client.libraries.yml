@@ -1,0 +1,21 @@
+# reserva_client.libraries.yml
+# Arquivo de configurações de libs usadas no módulo,
+# como css e javascript, necessário para que estes
+# tipos de arquivos sejam reconhecidos e servidos
+# corretamente pelo framework.
+#
+# author Jose Maciel <jose.maciel@extreme.digital>
+# version 1.0
+# copyright Proderj 2022.
+
+reserva_client_assets:
+  version: 1.0
+  css:
+    theme:
+      css/reservation.css: {}
+  js:
+    js/ApiHandlerFactory.js: {}
+    js/DomElsHandlerFactory.js: {}
+    js/EventHandlerFactory.js: {}
+    js/FormHandlerFactory.js: {}
+    js/Reservation.js: {}

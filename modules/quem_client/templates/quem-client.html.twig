@@ -1,0 +1,87 @@
+{#
+# Template do módulo.
+# version 1.0
+# copyright Proderj 2022.
+#}
+
+<section id="indexDireita9" class="indexDireita">
+    <div class="esquerda"></div>
+    <section id="indexDireita9" class="container-servicos">
+        <div class="reservaDireita loading-container">
+            <div class="reservaDireitaCima loading">
+                <h2>Aguarde</h2>
+                <img src={{ m_path ~ '/img/glass_spheres-loading.gif' }}>
+            </div>
+        </div>
+        <div class="main-menu">
+            <div id="paginaInicial9" class="direitaTituloTexto">
+                <a href="http://www.intranetdrupal.proderj.rj.gov.br/">
+                    <h3>Página Inicial</h3>
+                </a>
+                <h3>></h3>
+                <a href="#">
+                    <h3>Serviços</h3>
+                </a>
+                <h3>></h3>
+                <a href="#">
+                    <h3>Quem & Onde</h3>
+                </a>
+            </div>
+            <h1 class="titulo-menu">Quem & Onde</h1>
+
+            <div class="container-busca">
+                <div class="calendario-main">
+                     <nav>
+                        <div class="dropdown">
+                            <img src={{ m_path ~ '/img/filter.png' }}
+                                class="calendario-texto icon" alt="" srcset="">
+                            <div class="dropdown-content">
+                                <span data-search="name">Nome</span>
+                                <span data-search="ua">Setor</span>
+                                <span data-search="roleName">Cargo</span>
+                            </div>
+                        </div>
+                    </nav> 
+                </div>
+
+                <div class="buscar-main">
+                    <input class="Busca-texto" type="text" placeholder="Quem você procura ?">
+                </div>
+
+                <div class="loupe">
+                    <img class="loupe" src={{ m_path ~ '/img/loupe-blue.png' }} alt="loupe">
+                </div>
+            </div> 
+            {# tabela #}
+            <div class="reservaDireitaTabela">
+                <table id="who-table" class="tabela" id="tabela3">
+                    <thead>
+                        <tr id="lista">
+                            <th id="width">Nome</th>
+                            <th id="width">Aniversário</th>
+                            <th id="width">Cargo</th>
+                            <th id="width">ua</th>
+                            <th id="width">E-mail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <!-- Api -->
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <ul>
+                        <!--pages or li are comes from javascript -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {# alerta #}
+        <div id="alertBox"class="alert alert-danger" role="alert">
+            <p>Ocorreu um erro de comunicação com o servidor.</p>
+            <p>Pressione F5 para atualizar a página.</p>
+            <p>Caso o erro persista contate o administrador.</p>
+        </div>
+</section>
+</section>

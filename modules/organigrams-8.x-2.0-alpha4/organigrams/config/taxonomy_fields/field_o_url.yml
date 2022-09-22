@@ -1,0 +1,12 @@
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_o_url
+field_name: field_o_url
+label: URL
+description: 'Add a link to this organigram item.'
+required: false
+translatable: false
+default_value: {  }
+widget_type: text_textfield
+weight: 13

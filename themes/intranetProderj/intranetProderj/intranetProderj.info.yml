@@ -1,0 +1,37 @@
+# rjgov.info.yml
+# Arquivo de configurações básicas do tema, necessário
+# para que o tema seja reconhecido pelo framework.
+#
+# author Gianlucca Augusto <gianlucca.augusto@extreme.digital>
+# version 1.1
+# copyright Proderj 2021.
+
+name: Tema Intranet Proderj
+description: Tema para Intranet do Proderj
+type: theme
+version: 1.1
+project: 'proderj'
+core_version_requirement: ^8 || ^9
+base theme: classy
+libraries:
+  - intranetProderj/global-css
+  - intranetProderj/global-js
+  - intranetProderj/rjgov-aos
+  - intranetProderj/rjgov-datatable
+  
+regions:
+  menuTopo: 'Menu Topo'
+  logoPortal: 'Logo do Portal'
+  busca: 'Busca'
+  redesSociaisPortal: 'Redes Socias Portal'
+  menuPrincipal: 'Menu Principal'
+  sliderPrincipal: 'Slider Principal'
+  videosPrincipal: 'Vídeos Principal'
+  PrincipaisServicos2: 'Principais Serviços'
+  PrincipaisServicos: 'Programa de Capacitação'
+ #  flipCard: 'Flip Card'
+  noticiasPrincipal: 'Notícias Principal'
+  dadosPrincipal: 'Dados Principal'
+  footerSIC: 'Rodapé - SIC'
+  footerEndereco: 'Rodapé - Endereço'
+  content: 'Desabilitado'

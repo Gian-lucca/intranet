@@ -1,0 +1,12 @@
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_o_css_classes
+field_name: field_o_css_classes
+label: 'CSS Classes'
+description: 'Specify one or more classes for this organigram item.'
+required: false
+translatable: false
+default_value: {  }
+widget_type: text_textfield
+weight: 21

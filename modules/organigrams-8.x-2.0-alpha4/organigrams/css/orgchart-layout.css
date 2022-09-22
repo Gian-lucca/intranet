@@ -1,0 +1,186 @@
+.orgchart {
+  display: block;
+}
+
+.orgchart,
+.orgchart ul,
+.orgchart ul.nodeassists {
+  padding: 0;
+  margin: 0;
+}
+
+.orgchart ul {
+  display: flex;
+}
+
+.orgchart li,
+.orgchart .item-list li {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 1 0 auto;
+  padding: 0;
+}
+
+.orgchart .nodeassists > li {
+  flex: 0 0 50%;
+  margin-bottom: 20px;
+}
+
+.orgchart .nodeassists > li:nth-child(even)::after {
+  width: 100%;
+  display: block;
+}
+
+.orgchart .nodecontent {
+  align-self: center;
+  position: relative;
+  margin: 20px 5px;
+}
+
+.orgchart .nodeassists .leaf .nodecontent {
+  margin-bottom: 0;
+}
+
+.orgchart .collapsed > ul {
+  display: none;
+}
+
+.orgchart ul.vertical::before,
+.orgchart li::before,
+.orgchart li::after,
+.orgchart .nodecontent::after,
+.orgchart .nodecontent::before {
+  box-sizing: border-box;
+  content: '';
+  position: absolute;
+  border: 0px solid #CCCCCC;
+}
+
+.orgchart li:not(:only-child)::before {
+  border-top-width: 2px;
+  width: 100%;
+  height: 20px;
+  top: 0px;
+}
+
+/* top left radius */
+.orgchart li:first-child::before,
+.orgchart .nodeassists > li:nth-child(odd)::before,
+.orgchart ul.vertical > li:first-child::before {
+  border-left-width: 2px;
+  border-top-left-radius: 7px;
+  width: calc(50% + 1px);
+  right: 0;
+}
+
+/* top right radius */
+.orgchart li:last-child::before,
+.orgchart .nodeassists > li:nth-child(even)::before {
+  width: calc(50% + 1px);
+  border-right-width: 2px;
+  border-top-right-radius: 7px;
+}
+
+.orgchart .nodecontent::after,
+.orgchart .nodecontent::before {
+  border-left-width: 2px;
+  width: 2px;
+  height: 20px;
+  left: calc(50% - 1px);
+}
+
+.orgchart .nodecontent::before {
+  top: -20px;
+}
+
+.orgchart .nodecontent::after {
+  bottom: -20px;
+}
+
+.orgchart li:first-child:not(:only-child) > .nodecontent::before,
+.orgchart li:last-child:not(:only-child) > .nodecontent::before {
+  border-left-width: 0px;
+}
+
+.orgchart .nodeassists > li:nth-child(odd)::after {
+  border-right-width: 2px;
+  height: calc(100% + 20px);
+  top: 0;
+  right: -1px;
+}
+
+.orgchart .nodeassists > li > .nodecontent::before {
+  top: -20px;
+  border-left-width: 0;
+}
+
+.orgchart .nodeassists > li > .nodecontent::after {
+  bottom: -20px;
+}
+
+.orgchart .leaf > .nodecontent::after,
+.orgchart .root > .nodecontent::before,
+.orgchart .collapsed > .nodecontent::after,
+.orgchart .dummy .nodecontent,
+.orgchart .dummy::before,
+.orgchart .dummy::after {
+  display: none;
+}
+
+.orgchart ul.vertical {
+  flex-direction: column;
+  align-items: center;
+  margin: 0 2px;
+  position: relative;
+}
+
+.orgchart ul.vertical::before {
+  top: -8px;
+  left: calc(50% - 9px);
+  height: 10px;
+  width: 10px;
+  border-bottom-width: 2px;
+  border-right-width: 2px;
+  border-bottom-right-radius: 7px;
+}
+
+.orgchart ul.vertical > li > .nodecontent {
+  margin: 10px 0 0 10px;
+}
+
+.orgchart ul.vertical > li::before {
+  border-width: 0 0 0 2px;
+  left: 0px;
+  height: 100%;
+  width: 10px;
+  border-radius: 0;
+}
+
+.orgchart ul.vertical > li:first-child::before {
+  height: calc(100% + 2px);
+  width: calc(50% - 7px);
+  border-top-width: 2px;
+}
+
+.orgchart ul.vertical > li:last-child::before {
+  height: calc(50% + 6px);
+  border-bottom-width: 2px;
+  border-bottom-left-radius: 7px;
+}
+
+.orgchart ul.vertical > li > .nodecontent::before {
+  height: 2px;
+  width: 8px;
+  top: calc(50% - 1px);
+  left: -8px;
+  border-width: 2px 0 0 0;
+}
+
+.orgchart ul.vertical > li:first-child > .nodecontent {
+  margin-top: 20px;
+}
+
+.orgchart ul.vertical > li:last-child > .nodecontent::before {
+  display: none;
+}

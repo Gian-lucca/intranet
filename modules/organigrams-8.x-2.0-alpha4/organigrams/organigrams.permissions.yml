@@ -1,0 +1,9 @@
+create organigrams:
+  title: 'Create organigrams'
+  description: 'Can create organigrams.'
+import organigrams:
+  title: 'Import Drupal 7 organigrams'
+  description: 'Can import Drupal 7 organigrams.'
+view organigrams:
+  title: 'View organigrams'
+  description: 'Can view organigrams.'

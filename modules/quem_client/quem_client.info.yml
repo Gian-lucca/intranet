@@ -1,0 +1,15 @@
+# reserva_client.info.yml
+# Arquivo de configurações básicas do módulo, necessário
+# para que o módulo seja reconhecido pelo framework.
+#
+# author Jose Maciel <jose.maciel@extreme.digital>
+# version 1.0
+# copyright Proderj 2022.
+
+name: Quem Somos Client Module
+description: Cria a página Quem Somos para consumo da API Quem Somos.
+package: Custom
+
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9

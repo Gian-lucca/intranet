@@ -1,0 +1,14 @@
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_o_position
+field_name: field_o_position
+label: Position
+description: 'The position of the organigram item (will be ignored on root items).'
+required: false
+translatable: false
+default_value:
+  -
+    value: u
+widget_type: options_select
+weight: 11

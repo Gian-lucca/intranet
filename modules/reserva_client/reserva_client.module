@@ -1,0 +1,15 @@
+<?php
+/**
+ * Define o tema ( template ) do módulo.
+ * Implements hook_theme().
+ */
+
+function reserva_client_theme ($existing, $type, $theme, $path) {
+  return [
+    'reserva_client' => [
+      'variables' => [
+        'm_path' => NULL
+      ],
+    ],
+  ];
+}
